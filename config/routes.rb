@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
-    get "/contacts_url" => 'contacts#contacts_action'
-    get "/many_contacts_url" => 'contacts#many_contacts_action'
+    get "/contacts" => 'contacts#index'
+    post "/contacts" => 'contacts#create'
+    get "/contacts/:id" => 'contacts#show'
+    patch "/contacts/:id" => 'contacts#update'
+    delete "/contacts/:id" => 'contacts#destroy'
   end
 end
