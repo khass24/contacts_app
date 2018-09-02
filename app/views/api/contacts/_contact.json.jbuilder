@@ -6,6 +6,6 @@ json.email contact.email
 json.phone_number contact.phone_number
 
 json.formatted do
-  json.friendly_updated_at contact.friendly_updated_at
-  json.phone_number contact.japan_phone_number
+  json.updated_at contact.friendly_updated_at
+  json.japan_phone_number contact.japan_phone_number
 end
