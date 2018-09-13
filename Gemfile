@@ -17,7 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'faker'
 
+gem 'bcrypt', '~> 3.1.7'
 
+gem 'jwt'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
