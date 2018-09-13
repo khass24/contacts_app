@@ -1,8 +1,12 @@
 class Api::ContactsController < ApplicationController
   
   def index
-    @contacts = Contact.all
-    render 'index.json.jbuilder'
+    if current_user
+      @contacts = current_user.contacts
+      render 'index.json.jbuilder'
+    else
+      render json: []
+    end
   end
 
   def create
@@ -12,7 +16,8 @@ class Api::ContactsController < ApplicationController
                           last_name: params[:last_name],
                           bio: params[:bio],
                           email: params[:email],
-                          phone_number: params[:phone_number]
+                          phone_number: params[:phone_number],
+                          user_id: current_user.id
                           )
     if @contact.save
       render 'show.json.jbuilder'
